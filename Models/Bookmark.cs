@@ -9,6 +9,7 @@ public class Bookmark
     public string Notes { get; set; } = "";
     public string Description { get; set; } = "";
     public string Source { get; set; } = "Manual";
+    public string ResourceType { get; set; } = "Web Page";
     public string DateAdded { get; set; } = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
     public string LastVisited { get; set; } = "";
     public bool Favorite { get; set; }

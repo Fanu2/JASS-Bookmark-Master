@@ -72,7 +72,8 @@ public partial class LocalResources : UserControl
                 Tags = item.Type.Equals("Folder", StringComparison.OrdinalIgnoreCase) ? "local,folder" : $"local,{item.Extension.TrimStart('.').ToLowerInvariant()}",
                 Description = item.FullPath,
                 Notes = $"Local resource added from {FolderBox.Text}",
-                Source = "Local Folder"
+                Source = "Local Folder",
+                ResourceType = item.Type.Equals("Folder", StringComparison.OrdinalIgnoreCase) ? "Local Folder" : "Local File"
             };
             if (db.Add(bookmark)) added++;
         }

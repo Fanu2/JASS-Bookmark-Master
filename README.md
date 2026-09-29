@@ -1,46 +1,17 @@
-# JASS Bookmark Master v1.0
+# JASS Bookmark Master v1.2 — Resource Library
 
-A beautiful, local-first WPF desktop application for building one master bookmark library from multiple browser/resource bookmark collections.
+A private, local-first WPF resource library for bookmarks, web resources and local files.
 
-## v1.0 features
-- SQLite master library stored under `%LOCALAPPDATA%\\JASS\\BookmarkMaster`
-- Add bookmarks manually
-- Import HTML bookmark exports from Chrome, Edge, Firefox and compatible browsers
-- Import/export JSON master files
-- Export a portable HTML bookmark file
-- Search title, URL, folder, tags and notes
-- Favorites and Read Later flags
-- Folders and tags
-- Broken-link flag
-- Duplicate-safe URL insertion
-- Dashboard statistics
-- Open bookmarks in the default browser
-- Local/private by default
+## v1.2 highlights
+- Resource types: Web Page, GitHub Repository, Documentation, PDF, Dataset, Software, Video, Image, Local File, Local Folder, Other
+- Hierarchical folder paths using `/` (for example `AI/Models`)
+- Tag-aware library search and Tag Manager view
+- Resource Details panel with description and personal notes
+- Edit and delete resources
+- Research Collections stored separately from folders and tags
+- Existing v1.1 SQLite databases migrate automatically by adding `ResourceType`
+- Local folder scanner remains available
+- Favorites, Read Later and Broken flags remain persistent
+- Import, export and JSON backup remain available
 
-## Design direction
-The database is the authoritative master library; JSON is the portable backup/interchange format. Browser bookmark files are treated as import sources rather than separate permanent stores.
-
-## Build
-```powershell
-dotnet restore
-dotnet build
-dotnet run
-```
-
-## v1.1 — Local Resource Library
-
-JASS Bookmark Master can now search your local folders recursively and turn files or folders into bookmarkable `file:///` links.
-
-### Local Resources
-- Choose any accessible Windows folder.
-- Recursive search through subfolders.
-- Search by file/folder name or path.
-- Optional folder results.
-- Displays type, extension, size, modified date and containing folder.
-- Double-click a result to open it with Windows.
-- Add selected resources to the master bookmark database.
-- Add all visible search results in one operation.
-- Local bookmarks are stored in the same SQLite master library as web bookmarks.
-- Existing local links are skipped automatically.
-
-This keeps one master library for web URLs and useful local resources such as documents, PDFs, project folders, images, installers, scripts and reference files.
+Database: `%LOCALAPPDATA%\\JASS\\BookmarkMaster\\bookmarks.db`
